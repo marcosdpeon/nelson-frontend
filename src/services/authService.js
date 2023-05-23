@@ -50,7 +50,7 @@ class AuthService {
   })
 
   loginInWithToken = () => new Promise((resolve, reject) => {
-    axios.post('/api/account/me')
+    axios.post(`${API_HOST}/api/account/me`)
       .then((response) => {
         if (response.data.user) {
           resolve(response.data.user);
@@ -68,7 +68,7 @@ class AuthService {
   }
 
   register = (firstname, lastname, email, password) => new Promise((resolve, reject) => {
-    axios.post('/api/signup', {
+    axios.post(`${API_HOST}/api/signup`, {
       firstname: firstname,
       lastname: lastname,
       email: email,
