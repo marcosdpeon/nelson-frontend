@@ -25,8 +25,7 @@ export function login(name, password) {
           user
         }
       });
-    } catch (error) {
-      
+    } catch (error) {      
       dispatch({ type: LOGIN_FAILURE });
       throw error;
     }

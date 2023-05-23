@@ -1,5 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import axios from '../utils/axios';
+import { API_HOST } from '../config/api.config';
+
 class AuthService {
   setAxiosInterceptors = ({ onLogout }) => {
     axios.interceptors.response.use(
@@ -33,7 +35,7 @@ class AuthService {
   }
 
   loginWithNameAndPassword = (name, password) => new Promise((resolve, reject) => {
-    axios.post('/api/signin', { name, password })
+    axios.post(`${API_HOST}/api/signin`, { name, password })
       .then((response) => {
         if (response.data.user) {
           this.setSession(response.data.accessToken);
@@ -43,7 +45,7 @@ class AuthService {
         }
       })
       .catch((error) => {
-        reject(error);
+        throw error;
       });
   })
 
