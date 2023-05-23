@@ -40,7 +40,7 @@ const AdminUpload = () => {
             RUT: RUT,
             DV: DV
         };
-        axios.post('http://localhost:4000/students/create-student', studentObject)
+        axios.post('https://api-nelson.onrender.com/students/create-student', studentObject)
             .then(res => console.log(res.data));
         SetNOMBRE('')
         SetDIRECCION('')

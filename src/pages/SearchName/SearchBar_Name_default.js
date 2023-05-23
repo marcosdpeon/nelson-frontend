@@ -17,7 +17,7 @@ const SearchBarNameDefault = ({setListData}) => {
                 <div className="col-3" style={{paddingLeft: "10px"}}>
                     {/* <Link to='/SearchResult' style={{ display: "flex", justifyContent: "right" }}> */}
                         <button className="searchButton" onClick={()=>{
-                            axios.post('http://localhost:4000/students/temp', {"name": value})
+                            axios.post('https://api-nelson.onrender.com/students/temp', {"name": value})
                             .then((response) => {
                                setListData(response.data)
                                console.log("response.data", response.data);

@@ -15,7 +15,7 @@ const SearchBarRUTDefault = ({ setListData }) => {
                 </div>
                 <div className="col-3" style={{ display: "flex", justifyContent: "right", paddingLeft: "10px" }}>
                     <button className="searchButton" onClick={() => {
-                        axios.post('http://localhost:4000/students/temp_RUT', { "RUT": value })
+                        axios.post('https://api-nelson.onrender.com/students/temp_RUT', { "RUT": value })
                             .then((response) => {
                                 setListData(response.data)
                                 console.log("response.data", response.data);

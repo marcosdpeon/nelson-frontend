@@ -22,7 +22,7 @@ const SearchBarName23 = ({ setListData }) => {
             </div>
             <div style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}>
                 <button className="searchButton1" onClick={() => {
-                    axios.post('http://localhost:4000/students/temp23', { "name": value, "Common": value1, "Regeion": value2 })
+                    axios.post('https://api-nelson.onrender.com/students/temp23', { "name": value, "Common": value1, "Regeion": value2 })
                         .then((response) => {
                             setListData(response.data)
                             console.log("response.data", response.data);
